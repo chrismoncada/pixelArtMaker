@@ -8,6 +8,7 @@ const sizePicker = document.getElementById('sizePicker');
 const height = document.getElementById('inputHeight');
 const width = document.getElementById('inputWidth');
 
+
 // When size is submitted by the user, call makeGrid()
 sizePicker.onsubmit = function(event){
     event.preventDefault();
