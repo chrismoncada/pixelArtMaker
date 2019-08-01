@@ -15,7 +15,7 @@ sizePicker.onsubmit = function(event){
     makeGrid();
 };
 
-function makeGrid(height, width) {
+function makeGrid() {
   for (let i = 1; i <= 1; i++);
   const createRow = document.createElement('tr');
   createRow.addEventListener('click', function(){});
