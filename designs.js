@@ -1,21 +1,22 @@
 // Select color input
 const colorPicker = document.getElementById('colorPicker');
-colorPicker.addEventListener('click', function(){});
-
-
-// Select size input
-const sizePicker = document.getElementById('sizePicker');
-
+colorPicker.addEventListener('click', function(event) {
+  var color = event.target;
+  console.log(color.style.backgroundColor)
+});
 
 // When size is submitted by the user, call makeGrid()
 sizePicker.onsubmit = function(event){
     event.preventDefault();
+    pixelCanvas.innerHTML = "";
     makeGrid();
 };
 
+// Select size input
+
 function makeGrid() {
-  height = document.getElementById('inputHeight');
-  width = document.getElementById('inputWidth');
+  height = document.getElementById('inputHeight').value;
+  width = document.getElementById('inputWidth').value;
   // table reference
   pixelCanvas = document.getElementById('pixelCanvas');
   for (var r = 0; r < width; r++) {
@@ -29,4 +30,5 @@ function makeGrid() {
     current_row.append(current_cell);
   }
   pixelCanvas.append(current_row);
+}
 }
