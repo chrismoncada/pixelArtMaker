@@ -9,7 +9,6 @@ sizePicker.onsubmit = function(event){
 };
 
 // Select size input
-
 function makeGrid() {
   height = document.getElementById('inputHeight').value;
   width = document.getElementById('inputWidth').value;
@@ -23,6 +22,7 @@ function makeGrid() {
       current_cell.addEventListener("click", function(event) {
         var the_clicked_cell = event.target;
         console.log(the_clicked_cell.style.backgroundColor);
+        // creates color 
         event.target.style.backgroundColor = document.getElementById('colorPicker').value;
     })
     current_row.append(current_cell);
