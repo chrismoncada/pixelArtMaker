@@ -1,5 +1,7 @@
 // Select color input
+function changeColor () {
 const color = document.getElementById('colorPicker').value;
+};
 
 // When size is submitted by the user, call makeGrid()
 sizePicker.onsubmit = function(event){
@@ -24,7 +26,6 @@ function makeGrid() {
         var the_clicked_cell = event.target;
         console.log(the_clicked_cell.style.backgroundColor);
         event.target.style.backgroundColor = document.getElementById('colorPicker').value;
-        colorPicker.innerHTML = "";
     })
     current_row.append(current_cell);
   }
