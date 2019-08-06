@@ -1,9 +1,5 @@
 // Select color input
-const colorPicker = document.getElementById('colorPicker');
-colorPicker.addEventListener('click', function(event) {
-  var color = event.target;
-  console.log(color.style.backgroundColor)
-});
+const color = document.getElementById('colorPicker').value;
 
 // When size is submitted by the user, call makeGrid()
 sizePicker.onsubmit = function(event){
@@ -17,6 +13,7 @@ sizePicker.onsubmit = function(event){
 function makeGrid() {
   height = document.getElementById('inputHeight').value;
   width = document.getElementById('inputWidth').value;
+
   // table reference
   pixelCanvas = document.getElementById('pixelCanvas');
   for (var r = 0; r < width; r++) {
@@ -25,7 +22,9 @@ function makeGrid() {
       var current_cell = document.createElement('td');
       current_cell.addEventListener("click", function(event) {
         var the_clicked_cell = event.target;
-        console.log(the_clicked_cell.style.backgroundColor)
+        console.log(the_clicked_cell.style.backgroundColor);
+        event.target.style.backgroundColor = document.getElementById('colorPicker').value;
+        colorPicker.innerHTML = "";
     })
     current_row.append(current_cell);
   }
